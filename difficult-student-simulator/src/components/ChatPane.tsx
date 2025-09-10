@@ -4,7 +4,7 @@ import type { Message } from '../types'
 import { chatApi } from '../lib/api'
 
 export default function ChatPane(){
-  const { persona, scenario, messages, addMessage, mode, setMode, escalation, setEscalation } = useSessionStore()
+  const { persona, messages, addMessage, mode, setMode, escalation, setEscalation } = useSessionStore()
   const [loading, setLoading] = useState(false)
   const [input, setInput] = useState('')
   const endRef = useRef<HTMLDivElement>(null)
@@ -21,7 +21,6 @@ export default function ChatPane(){
       const res = await chatApi({ role: role==='coach'?'coach':'student', messages: [...messages, userMsg], persona, mode })
       const reply: Message = { role: role==='coach'?'coach':'student', content: res.reply, ts: Date.now() }
       addMessage(reply)
-      // naive escalation heuristic
       setEscalation(escalation + (role==='coach' ? -5 : (userMsg.content.includes('now') ? 8 : 2)))
     } catch (e:any) {
       addMessage({ role: 'system', content: 'Error contacting serverless function. Check Netlify logs.', ts: Date.now() })

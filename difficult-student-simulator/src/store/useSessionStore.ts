@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import type { Message, Persona, Scenario, RubricWeights } from '../types'
+import { defaultWeights } from '../lib/rubrics'
 
 type State = {
   persona?: Persona
@@ -18,8 +19,6 @@ type Actions = {
   setEscalation: (v: number) => void
   reset: () => void
 }
-
-import { defaultWeights } from '../lib/rubrics'
 
 export const useSessionStore = create<State & Actions>((set) => ({
   persona: undefined,

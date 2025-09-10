@@ -7,7 +7,7 @@ export default function TopNav() {
         <Link to="/" className="font-semibold">Difficult Student Simulator</Link>
         <div className="flex items-center gap-3">
           <Link to="/scenario" className="btn">Start Practice</Link>
-          <a href="https://www.netlify.com" target="_blank" className="text-sm">Deploy</a>
+          <a href="https://www.netlify.com" target="_blank" rel="noreferrer" className="text-sm">Deploy</a>
         </div>
       </div>
     </nav>

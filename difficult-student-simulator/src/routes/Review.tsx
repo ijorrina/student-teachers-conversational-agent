@@ -22,7 +22,7 @@ export default function Review(){
             <div key={k} className="p-3 rounded-xl border border-slate-200 dark:border-slate-800">
               <div className="text-sm font-medium capitalize">{k}</div>
               <div className="mt-1 h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
-                <div className="h-2 bg-blue-600" style={{ width: `${(v/4)*100}%` }} />
+                <div className="h-2" style={{ backgroundColor: '#2563eb', width: `${(v/4)*100}%` }} />
               </div>
               <div className="text-xs mt-1">{v}/4</div>
             </div>
@@ -33,7 +33,7 @@ export default function Review(){
       <div className="card p-4 space-y-2">
         <h3 className="font-semibold">Actionable Next Time</h3>
         <ul className="list-disc pl-5 text-sm">
-          <li>Name the impact on learning and offer a specific choice (e.g., “You can…” vs “You must…”).</li>
+          <li>Name the impact on learning and offer a specific choice.</li>
           <li>Ask one open question, then wait 5 seconds before following up.</li>
           <li>Close with a summary, clear next step, and time to check back.</li>
         </ul>

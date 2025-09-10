@@ -8,10 +8,9 @@
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false,
+    "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": {}
+    "baseUrl": "."
   },
   "include": ["src", "netlify/functions"]
 }
